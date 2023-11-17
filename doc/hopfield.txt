@@ -1,0 +1,45 @@
+Hopfield Network for Time Series
+
+Igor Mol <igor.mol@makes.ai>
+
+“The memory has entered your mind, but it must be ‘discovered.’ It will emerge 
+in dreams, or when you are awake, when you turn the pages of a book, or turn a 
+corner. Don’t be impatient; don’t invent recollections. Chance in its mysterious 
+workings may help you along, or it may hold you back. As I gradually forget, 
+you will remember. I cannot tell you how long the process will take.”
+
+- Jorge Luis Borges
+
+
+In the program Hopfield.py, a Hopfield Network is implemented for time-series 
+completion, a class named HopfieldNetwork is utilized to model and predict missing 
+values in a time series. The network is initialized with a specified size, and 
+the weights matrix, representing the connections between neurons, is set to zeros 
+initially. The training method updates these weights based on the outer product of 
+input patterns, excluding self-connections to prevent distortion.
+
+	The prediction process involves iteratively updating the output pattern 
+using the dot product with the weights matrix. This updated pattern is determined 
+by applying a sign function to the dot product result. The number of iterations 
+is user-defined, influencing the convergence of the predicted pattern.
+
+	Two utility functions, normalize_data and denormalize_pattern, assist in 
+preprocessing the time series. nomalize_data scales the data to the [0, 1] range, 
+while denormalize_pattern reverts a normalized pattern to its original scale based 
+on the original minimum and maximum values.
+
+	In the main function, time series data is loaded from a CSV file and 
+subsequently normalized using the utility functions. A Hopfield Network instance 
+is created, and the network is trained with the normalized time series values. 
+A subset of the time series, such as the first half, is chosen as the input pattern. 
+The Hopfield Network is then employed to predict the remaining values in the time series.
+
+	The predicted and input patterns are denormalized to their original scale, 
+and the results are presented in a tabular format. Additionally, a graphical 
+representation is provided through a time series plot that showcases the actual, 
+input, and predicted values.
+
+	This approach demonstrates the application of Hopfield Networks for 
+time-series completion, offering a systematic framework for modeling and predicting 
+missing values in sequential data. The combination of mathematical foundations and 
+practical implementation makes it a valuable tool for various time-series completion tasks.
