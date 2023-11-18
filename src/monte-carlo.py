@@ -2,7 +2,7 @@
 #
 # Igor Mol <igor.mol@makes.ai>
 #
-# In Python program, the Monte Carlo method is applied to analyze time series 
+# In this program, the Monte Carlo method is applied to analyze time series 
 # data for detecting and handling anomalies. The code begins by creating a class 
 # called MonteCarloAnomalyDetection with key parameters like the file path to a 
 # CSV containing time series data, a threshold for anomaly detection, and the 
